@@ -5,8 +5,8 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
 class FaveYTHandler {
-    lateinit var database: FirebaseDatabase
-    lateinit var faveYTRef: DatabaseReference
+    var database: FirebaseDatabase
+    var faveYTRef: DatabaseReference
 
     init {
         database = FirebaseDatabase.getInstance()
@@ -19,4 +19,13 @@ class FaveYTHandler {
         faveYTRef.child(id!!).setValue(faveYT)
         return true
     }
+    fun update (faveYT: FaveYT): Boolean{
+        faveYTRef.child(faveYT.id!!).setValue(faveYT)
+        return true
+    }
+    fun delete(faveYT: FaveYT): Boolean{
+        faveYTRef.child(faveYT.id!!).removeValue()
+        return true
+    }
+
 }

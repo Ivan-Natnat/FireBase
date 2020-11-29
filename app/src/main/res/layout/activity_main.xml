@@ -10,7 +10,7 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="4dp"
         android:text="Enter your Favorite Youtube Channel"
         android:textAlignment="center"
         android:textAllCaps="true"
@@ -26,12 +26,12 @@
         android:id="@+id/channelName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
 
         android:hint="Youtube Channel Name"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -51,36 +51,34 @@
         android:id="@+id/rank"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="5"
-        android:hint="Rank (1-10 min.)"
+        android:hint="Rank (1-10)"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/channelLink"
         android:layout_marginTop="10dp"
         />
+
     <EditText
         android:id="@+id/reason"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Reason for the Rank"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="20dp"
         android:layout_marginStart="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rank"
         android:layout_marginTop="10dp"
-        />
+        android:layout_marginEnd="20dp"
+        android:hint="Reason for the Rank"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rank" />
 
     <Button
         android:id="@+id/submitBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Submit"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:text="Add"
+        app:layout_constraintEnd_toStartOf="@+id/gotoRankBtn"
+        app:layout_constraintHorizontal_bias="0.201"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/reason" />
 
@@ -88,12 +86,22 @@
         android:id="@+id/gotoRankBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Go to Rankings"
+        android:layout_marginTop="8dp"
+        android:text="Display Rankings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.784"
+        app:layout_constraintStart_toStartOf="@+id/submitBtn"
+        app:layout_constraintTop_toBottomOf="@+id/reason" />
+
+    <ListView
+        android:id="@+id/ytListView"
+        android:layout_width="379dp"
+        android:layout_height="381dp"
+        android:layout_marginTop="12dp"
+        android:background="#40158C"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/submitBtn" />
-
+        app:layout_constraintTop_toBottomOf="@+id/gotoRankBtn" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
